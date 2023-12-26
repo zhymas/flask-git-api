@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, url_for, redirect
+from flask import Flask, request, render_template, url_for
 from request import git_api
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ def home_page():
         if repos:
             return render_template('repos.html', username=username, repos=repos)
         else:
-            return render_template('error.html')
+            return render_template('error.html', username=username)
     return render_template('index.html')
 
 if __name__ == "__main__":
