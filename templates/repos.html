@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GitAPI</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="login">
+  <h1>Repositories for {{username}}</h1>
+  {% for repo in repos %}
+    <small>{{ repo }}{% if not loop.last %}, {% endif %}</small>
+{% endfor %}
+  </div>
+</body>
+</html>
